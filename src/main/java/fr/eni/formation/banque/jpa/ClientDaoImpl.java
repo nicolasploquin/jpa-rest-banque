@@ -1,7 +1,5 @@
 package fr.eni.formation.banque.jpa;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
@@ -41,7 +39,7 @@ public class ClientDaoImpl implements ClientDao {
 
 	@Override
 	public Stream<Client> readAll() {
-		return em.createQuery("from Client").getResultList().stream();
+		return em.createQuery("from Client", Client.class).getResultList().stream();
 	}
 	
 	@Override

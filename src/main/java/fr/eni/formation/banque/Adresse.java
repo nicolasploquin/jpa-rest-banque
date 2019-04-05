@@ -1,6 +1,5 @@
 package fr.eni.formation.banque;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
