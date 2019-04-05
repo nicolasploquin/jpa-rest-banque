@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	
+	<persistence-unit name="localhost-mysql-banque-jpa" transaction-type="JTA" >
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<class>fr.eni.formation.banque.Client</class>
+		<!-- <class>fr.eni.formation.banque.Compte</class>
+		<class>fr.eni.formation.banque.Livret</class>
+		<class>fr.eni.formation.banque.Operation</class>
+		<class>fr.eni.formation.banque.Credit</class>
+		<class>fr.eni.formation.banque.Debit</class> -->
+		
+		<properties>
+		
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque-wildfly?serverTimezone=Europe/Paris" />
+			<property name="javax.persistence.jdbc.user" value="formation" />
+			<property name="javax.persistence.jdbc.password" value="Pa$$w0rd" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+			
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create" /><!-- create, validate, create-drop, update -->
+			<!-- property name="hibernate.hbm2ddl.import_files" value="/banque.sql" / -->
+
+		</properties>
+	</persistence-unit>
+	
+</persistence>
